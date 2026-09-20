@@ -1,0 +1,25 @@
+{
+  "caseType": "crowd_avoidance",
+  "summary": "최대 10분 우회를 허용하고 혼잡도가 낮은 길을 선호",
+  "hardConstraints": {
+    "maxExtraMinutes": 10,
+    "minLightingScore": 40,
+    "minQuietScore": null,
+    "avoidStairs": false,
+    "avoidActiveEvents": false
+  },
+  "preferences": {
+    "crowdDirection": "less",
+    "crowdWeight": 0.45,
+    "lightingWeight": 0.15,
+    "distanceWeight": 0.15,
+    "quietWeight": 0.15,
+    "shadeWeight": 0.1
+  },
+  "explanation": [
+    "사람 많은 곳을 피하고 싶다는 요구를 가장 높게 반영했습니다.",
+    "10분까지의 우회를 Hard Constraint로 해석했습니다.",
+    "지쳤다는 표현을 반영해 조용함과 그늘에도 가중치를 두었습니다."
+  ],
+  "ambiguityWarning": null
+}

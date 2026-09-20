@@ -1,0 +1,74 @@
+[
+  {
+    "routeId": "route-a",
+    "name": "최단 경로",
+    "durationMin": 15,
+    "distanceM": 1200,
+    "hasStairs": false,
+    "coordinates": [
+      {"lat": 37.5133, "lng": 127.1001},
+      {"lat": 37.5094, "lng": 127.1034},
+      {"lat": 37.5055, "lng": 127.1067}
+    ],
+    "metrics": {
+      "crowdScore": 87,
+      "lightingScore": 57,
+      "quietScore": 22,
+      "shadeScore": 35,
+      "streetlightCount": 27,
+      "shadeSpotCount": 12,
+      "noiseSourceCount": 9,
+      "crowdCellCount": 7,
+      "activeEventCount": 1,
+      "storeCount": 48
+    }
+  },
+  {
+    "routeId": "route-b",
+    "name": "골목 우회 경로",
+    "durationMin": 19,
+    "distanceM": 1500,
+    "hasStairs": false,
+    "coordinates": [
+      {"lat": 37.5133, "lng": 127.1001},
+      {"lat": 37.5118, "lng": 127.1060},
+      {"lat": 37.5055, "lng": 127.1067}
+    ],
+    "metrics": {
+      "crowdScore": 18,
+      "lightingScore": 41,
+      "quietScore": 88,
+      "shadeScore": 70,
+      "streetlightCount": 25,
+      "shadeSpotCount": 30,
+      "noiseSourceCount": 1,
+      "crowdCellCount": 7,
+      "activeEventCount": 0,
+      "storeCount": 5
+    }
+  },
+  {
+    "routeId": "route-c",
+    "name": "상가 골목 경로",
+    "durationMin": 17,
+    "distanceM": 1350,
+    "hasStairs": false,
+    "coordinates": [
+      {"lat": 37.5133, "lng": 127.1001},
+      {"lat": 37.5080, "lng": 127.1010},
+      {"lat": 37.5055, "lng": 127.1067}
+    ],
+    "metrics": {
+      "crowdScore": 64,
+      "lightingScore": 92,
+      "quietScore": 45,
+      "shadeScore": 55,
+      "streetlightCount": 50,
+      "shadeSpotCount": 20,
+      "noiseSourceCount": 5,
+      "crowdCellCount": 7,
+      "activeEventCount": 0,
+      "storeCount": 63
+    }
+  }
+]

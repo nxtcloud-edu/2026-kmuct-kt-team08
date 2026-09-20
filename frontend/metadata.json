@@ -1,0 +1,6 @@
+{
+  "name": "MYWAY - AI 맞춤 경로 추천",
+  "description": "가장 빠른 길이 아니라, 지금 나에게 맞는 길을 찾아주는 AI 맞춤 경로 추천 모바일 웹 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
