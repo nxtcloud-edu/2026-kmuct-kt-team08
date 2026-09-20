@@ -1,0 +1,14 @@
+# schemas.py는 pydantic v2 문법(model_validator(mode="after"))을 사용합니다.
+# v1을 설치하면 즉시 ImportError가 납니다. 버전을 내리지 마세요.
+pydantic>=2.7,<3.0
+
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+python-dotenv>=1.0
+
+# 역할 2가 LLM SDK를 추가할 자리입니다.
+# team-rules.md 규칙 8에 따라 패키지 이름과 이유를 팀에 먼저 알리고 추가하세요.
+
+# 개발용
+pytest>=8.0
+httpx>=0.27

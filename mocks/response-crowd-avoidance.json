@@ -1,0 +1,140 @@
+{
+  "requestId": "demo-crowd-001",
+  "interpretedPreference": {
+    "caseType": "crowd_avoidance",
+    "summary": "최대 10분 우회를 허용하고 혼잡도가 낮은 길을 선호",
+    "hardConstraints": {
+      "maxExtraMinutes": 10,
+      "minLightingScore": 40,
+      "minQuietScore": null,
+      "avoidStairs": false,
+      "avoidActiveEvents": false
+    },
+    "preferences": {
+      "crowdDirection": "less",
+      "crowdWeight": 0.45,
+      "lightingWeight": 0.15,
+      "distanceWeight": 0.15,
+      "quietWeight": 0.15,
+      "shadeWeight": 0.1
+    },
+    "explanation": [
+      "사람 많은 곳을 피하고 싶다는 요구를 가장 높게 반영했습니다.",
+      "10분까지의 우회를 Hard Constraint로 해석했습니다.",
+      "지쳤다는 표현을 반영해 조용함과 그늘에도 가중치를 두었습니다."
+    ],
+    "ambiguityWarning": null
+  },
+  "routes": [
+    {
+      "routeId": "route-b",
+      "name": "골목 우회 경로",
+      "durationMin": 19,
+      "distanceM": 1500,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5118, "lng": 127.1060},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 18,
+        "lightingScore": 41,
+        "quietScore": 88,
+        "shadeScore": 70,
+        "streetlightCount": 25,
+        "shadeSpotCount": 30,
+        "noiseSourceCount": 1,
+        "crowdCellCount": 7,
+        "activeEventCount": 0,
+        "storeCount": 5
+      },
+      "rank": 1,
+      "extraMinutes": 4,
+      "matchScore": 63.25,
+      "rejected": false,
+      "rejectionReasons": [],
+      "recommendationReasons": [
+        "세 경로 중 가장 한적합니다 (혼잡도 18점).",
+        "최단 경로보다 4분 더 걸리지만 현재 유동인구가 약 79% 낮습니다.",
+        "소음원이 1곳뿐이고 가로수 그늘이 이어집니다.",
+        "조도 점수 41점은 요구 기준 40점을 충족합니다."
+      ]
+    },
+    {
+      "routeId": "route-c",
+      "name": "상가 골목 경로",
+      "durationMin": 17,
+      "distanceM": 1350,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5080, "lng": 127.1010},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 64,
+        "lightingScore": 92,
+        "quietScore": 45,
+        "shadeScore": 55,
+        "streetlightCount": 50,
+        "shadeSpotCount": 20,
+        "noiseSourceCount": 5,
+        "crowdCellCount": 7,
+        "activeEventCount": 0,
+        "storeCount": 63
+      },
+      "rank": 2,
+      "extraMinutes": 2,
+      "matchScore": 49.75,
+      "rejected": false,
+      "rejectionReasons": [],
+      "recommendationReasons": [
+        "가장 밝지만 상가 63곳의 통행으로 혼잡도가 중간 수준(64점)입니다."
+      ]
+    },
+    {
+      "routeId": "route-a",
+      "name": "최단 경로",
+      "durationMin": 15,
+      "distanceM": 1200,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5094, "lng": 127.1034},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 87,
+        "lightingScore": 57,
+        "quietScore": 22,
+        "shadeScore": 35,
+        "streetlightCount": 27,
+        "shadeSpotCount": 12,
+        "noiseSourceCount": 9,
+        "crowdCellCount": 7,
+        "activeEventCount": 1,
+        "storeCount": 48
+      },
+      "rank": 3,
+      "extraMinutes": 0,
+      "matchScore": 36.2,
+      "rejected": false,
+      "rejectionReasons": [],
+      "recommendationReasons": [
+        "가장 빠르지만 진행 중인 행사 1건으로 혼잡도가 87점으로 가장 높고 소음원도 9곳입니다."
+      ]
+    }
+  ],
+  "recommendationSummary": "4분 더 걸리지만 현재 유동인구가 최단 경로보다 약 79% 낮고 소음도 적은 골목 우회 경로를 추천합니다.",
+  "dataTimestamp": "2026-09-19T18:30:00+09:00",
+  "isMockData": true,
+  "metricSources": {
+    "crowd": "mock",
+    "lighting": "mock",
+    "quiet": "mock",
+    "shade": "mock",
+    "event": "mock",
+    "store": "mock"
+  }
+}

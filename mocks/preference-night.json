@@ -1,0 +1,25 @@
+{
+  "caseType": "night_walk",
+  "summary": "조금 우회하더라도 밝고 일정 수준의 유동인구가 있는 길을 선호",
+  "hardConstraints": {
+    "maxExtraMinutes": 10,
+    "minLightingScore": 50,
+    "minQuietScore": null,
+    "avoidStairs": false,
+    "avoidActiveEvents": false
+  },
+  "preferences": {
+    "crowdDirection": "more",
+    "crowdWeight": 0.25,
+    "lightingWeight": 0.5,
+    "distanceWeight": 0.1,
+    "quietWeight": 0.15,
+    "shadeWeight": 0.0
+  },
+  "explanation": [
+    "밤이라는 상황을 반영해 밝기 중요도를 가장 높였습니다.",
+    "외진 길을 피하기 위해 유동인구가 많은 방향을 선호합니다.",
+    "야간이므로 그늘은 고려하지 않습니다."
+  ],
+  "ambiguityWarning": null
+}

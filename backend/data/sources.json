@@ -1,0 +1,11 @@
+{
+  "_comment": "각 CSV의 데이터 출처. 'mock' 또는 파일 없음(missing)이 하나라도 있으면 응답의 isMockData=true. 샘플 데이터는 data/sample/ 에 보관.",
+  "streetlights": "seoul-streetlight-2026",
+  "streetlight_segments": "not-generated",
+  "lighting": "s-dot-illuminance-2026-08",
+  "shade": "seoul-street-tree-presence",
+  "noise": "s-dot-noise-2026-08",
+  "crowd_grid": "seoul-living-population-2026-09-15",
+  "events": "none (seoul-culture-event-api pending)",
+  "store_zones": "seoul-commercial-district-2026"
+}

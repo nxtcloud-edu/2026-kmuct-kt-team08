@@ -1,0 +1,139 @@
+{
+  "requestId": "demo-night-001",
+  "interpretedPreference": {
+    "caseType": "night_walk",
+    "summary": "조금 우회하더라도 밝고 일정 수준의 유동인구가 있는 길을 선호",
+    "hardConstraints": {
+      "maxExtraMinutes": 10,
+      "minLightingScore": 50,
+      "minQuietScore": null,
+      "avoidStairs": false,
+      "avoidActiveEvents": false
+    },
+    "preferences": {
+      "crowdDirection": "more",
+      "crowdWeight": 0.25,
+      "lightingWeight": 0.5,
+      "distanceWeight": 0.1,
+      "quietWeight": 0.15,
+      "shadeWeight": 0.0
+    },
+    "explanation": [
+      "밤이라는 상황을 반영해 밝기 중요도를 가장 높였습니다.",
+      "외진 길을 피하기 위해 유동인구가 많은 방향을 선호합니다.",
+      "야간이므로 그늘은 고려하지 않습니다."
+    ],
+    "ambiguityWarning": null
+  },
+  "routes": [
+    {
+      "routeId": "route-c",
+      "name": "상가 골목 경로",
+      "durationMin": 17,
+      "distanceM": 1350,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5080, "lng": 127.1010},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 64,
+        "lightingScore": 92,
+        "quietScore": 45,
+        "shadeScore": 55,
+        "streetlightCount": 50,
+        "shadeSpotCount": 20,
+        "noiseSourceCount": 5,
+        "crowdCellCount": 7,
+        "activeEventCount": 0,
+        "storeCount": 63
+      },
+      "rank": 1,
+      "extraMinutes": 2,
+      "matchScore": 68.75,
+      "rejected": false,
+      "rejectionReasons": [],
+      "recommendationReasons": [
+        "조도 점수 92점, 가로등 50개로 세 경로 중 가장 밝습니다.",
+        "상가 63곳이 있어 밤에도 유동인구가 적당히 유지됩니다 (64점).",
+        "최단 경로보다 2분 더 걸립니다."
+      ]
+    },
+    {
+      "routeId": "route-a",
+      "name": "최단 경로",
+      "durationMin": 15,
+      "distanceM": 1200,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5094, "lng": 127.1034},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 87,
+        "lightingScore": 57,
+        "quietScore": 22,
+        "shadeScore": 35,
+        "streetlightCount": 27,
+        "shadeSpotCount": 12,
+        "noiseSourceCount": 9,
+        "crowdCellCount": 7,
+        "activeEventCount": 1,
+        "storeCount": 48
+      },
+      "rank": 2,
+      "extraMinutes": 0,
+      "matchScore": 63.55,
+      "rejected": false,
+      "rejectionReasons": [],
+      "recommendationReasons": [
+        "가장 빠르고 사람이 많지만 조도가 57점으로 낮고 소음원이 9곳입니다."
+      ]
+    },
+    {
+      "routeId": "route-b",
+      "name": "골목 우회 경로",
+      "durationMin": 19,
+      "distanceM": 1500,
+      "hasStairs": false,
+      "coordinates": [
+        {"lat": 37.5133, "lng": 127.1001},
+        {"lat": 37.5118, "lng": 127.1060},
+        {"lat": 37.5055, "lng": 127.1067}
+      ],
+      "metrics": {
+        "crowdScore": 18,
+        "lightingScore": 41,
+        "quietScore": 88,
+        "shadeScore": 70,
+        "streetlightCount": 25,
+        "shadeSpotCount": 30,
+        "noiseSourceCount": 1,
+        "crowdCellCount": 7,
+        "activeEventCount": 0,
+        "storeCount": 5
+      },
+      "rank": 3,
+      "extraMinutes": 4,
+      "matchScore": 0,
+      "rejected": true,
+      "rejectionReasons": [
+        "조도 점수 41점이 요구 기준 50점 미만입니다."
+      ],
+      "recommendationReasons": []
+    }
+  ],
+  "recommendationSummary": "2분 더 걸리지만 가로등이 거의 2배 많고 조도 점수가 57점에서 92점으로 높아지는 상가 골목 경로를 추천합니다. 골목 우회 경로는 조도 기준 미달로 제외했습니다.",
+  "dataTimestamp": "2026-09-19T23:00:00+09:00",
+  "isMockData": true,
+  "metricSources": {
+    "crowd": "mock",
+    "lighting": "mock",
+    "quiet": "mock",
+    "shade": "mock",
+    "event": "mock",
+    "store": "mock"
+  }
+}
