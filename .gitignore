@@ -32,3 +32,8 @@ desktop.ini
 
 # Claude Code 로컬 실행 설정
 .claude/
+
+# Environment-specific development TLS material
+/frontend/certs/
+*.key
+*.pem

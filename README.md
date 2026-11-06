@@ -75,3 +75,22 @@
 
 이 패키지는 Git에 바로 올릴 수 있는 규격·스캐폴드입니다. GitHub 저장소 생성, API 키 발급, 지도/유동인구 API 선정과 실제 배포 계정 연결은 팀이 별도로 해야 합니다.
 
+## 개발 HTTPS 인증서 (보안 패치)
+
+공유 개발 개인키와 인증서를 제거했습니다. 기본 개발 서버는 HTTP를 사용합니다.
+HTTPS가 필요하면 개발자/환경마다 새 인증서를 만들고 다음 두 경로를 함께 지정합니다.
+
+```bash
+cd frontend
+mkdir -p certs
+umask 077
+openssl req -x509 -newkey rsa:2048 -sha256 -nodes -days 30 \
+  -keyout certs/local-key.pem -out certs/local-cert.pem \
+  -subj '/CN=localhost' -addext 'subjectAltName=DNS:localhost,IP:127.0.0.1'
+DEV_TLS_KEY_FILE=certs/local-key.pem DEV_TLS_CERT_FILE=certs/local-cert.pem npm run dev
+```
+
+두 환경변수는 `frontend` 기준 상대 경로 또는 절대 경로입니다. 하나만 지정하거나
+파일을 읽을 수 없으면 시작을 중단합니다. 인증서에 없는 호스트로 접속하려면 해당
+환경에 맞게 별도로 발급하세요. 개인키는 Git에 추가하지 마세요.
+이전에 공유 인증서를 신뢰/예외 등록한 환경은 해당 신뢰를 제거하고 새 인증서로 교체해야 합니다.

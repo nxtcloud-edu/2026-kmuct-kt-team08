@@ -4,13 +4,18 @@ import fs from 'fs';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-// HTTPS 인증서 (self-signed). 파일이 있을 때만 HTTPS 활성화.
-const keyPath = path.resolve(__dirname, 'certs/dev-key.pem');
-const certPath = path.resolve(__dirname, 'certs/dev-cert.pem');
-const httpsOptions =
-  fs.existsSync(keyPath) && fs.existsSync(certPath)
-    ? {key: fs.readFileSync(keyPath), cert: fs.readFileSync(certPath)}
-    : undefined;
+// HTTPS는 환경별로 생성한 Git 미추적 인증서/개인키를 명시한 경우에만 사용합니다.
+const keyFile = process.env.DEV_TLS_KEY_FILE;
+const certFile = process.env.DEV_TLS_CERT_FILE;
+if (Boolean(keyFile) !== Boolean(certFile)) {
+  throw new Error('DEV_TLS_KEY_FILE and DEV_TLS_CERT_FILE must be set together');
+}
+const httpsOptions = keyFile && certFile
+  ? {
+      key: fs.readFileSync(path.resolve(__dirname, keyFile)),
+      cert: fs.readFileSync(path.resolve(__dirname, certFile)),
+    }
+  : undefined;
 
 // 백엔드 주소 (프록시 대상). 기본 localhost:8000.
 const backendTarget = process.env.BACKEND_ORIGIN ?? 'http://localhost:8000';
